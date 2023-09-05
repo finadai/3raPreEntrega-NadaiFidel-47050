@@ -1,5 +1,7 @@
-const alcoholList = [];
-
+const alcoholList=[];
+alert("Bienvenido a la taberna de Moe, ¿que va a querer?");
+function showList(){
+  
 while (true) {
   const newItem = prompt("Ingrese el alcohol que desea comprar (si está satisfecho, presione en cancelar para finalizar la operación):");
   
@@ -19,5 +21,5 @@ if (alcoholList.length > 0) {
 else {
   alert("La lista de compra está vacía amigo.");
 }
-
+}
 
