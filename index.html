@@ -4,10 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Javascript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <button onclick="showList()">Abrir lista de compra</button>
-    
+    <header>
+        <img src="./images/taberna.jpg" alt="tabernademoe" title="taberna de moe">
+        <div class="text-container">
+            <h1 class="fall-from-above">Taberna de Moe</h1>
+            <h2 class="fall-from-above">Bienvenidos</h2>
+        </div>
+        <header>
+            <nav class="navbar">
+                <div class="container">
+                    <a class="navbar-brand" href="#"></a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Políticas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre mí</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Bebidas nuevas</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+
+        <div class="cart">
+            <h3>Carrito de compras</h3>
+            <ul id="cart-items">
+                <!-- Aquí se agregarán los elementos del carrito -->
+            </ul>
+            <p>Total: <span id="cart-total">$0.00</span></p>
+        </div>
+        
+    </header>
+    <h3 class="centered-text">Lo más solicitado</h3>
+    <div class="image-carousel">
+        <div class="image-container">
+            <img src="./images/cervezaduff.jpg" alt="cervezaduff" title="cerveza duff">
+            <p class="image-description">Cerveza duff $5.00</p>
+            <button class="add-to-cart-btn" id="add-to-cart-btn-1">Añadir al carrito</button>
+        </div>
+        <div class="image-container">
+            <img src="./images/llamaradamoe.jpg" alt="llamaradamoe" title="llamarada moe">
+            <p class="image-description">Llamarada Moe $30.00</p>
+            <button class="add-to-cart-btn" id="add-to-cart-btn-2">Añadir al carrito</button>
+        </div>
+        <div class="image-container">
+            <img src="./images/olvidame.jpg" alt="olvidame" title="olvidame">
+            <p class="image-description">Cóctel Olvidame $25.00</p>
+            <button class="add-to-cart-btn" id="add-to-cart-btn-3">Añadir al carrito</button>
+        </div>
+        <div class="image-container">
+            <img src="./images/ambrosiacupido.jpg" alt="ambrosiacupido" title="ambrosia cupido">
+            <p class="image-description">Cóctel Ambrosia de Cupido $40.00</p>
+            <button class="add-to-cart-btn" id="add-to-cart-btn-4">Añadir al carrito</button>
+        </div>
+        <div class="image-container">
+            <img src="./images/skittlebrau.jpg" alt="skittlebrau" title="skittlebrau">
+            <p class="image-description">Skittlebrau $7.50</p>
+            <button class="add-to-cart-btn" id="add-to-cart-btn-5">Añadir al carrito</button>
+        </div>
+    </div>
+<br>
+    <h3 class="centered-text">Clientes frecuentes</h3>
+    <div class="new-image-grid">
+        <div class="new-image-container">
+            <img src="./images/homerosimpson.jpg" alt="homero" title="homero simpson">
+            <p class="new-image-description">Homero J. Simpson</p>
+        </div>
+        <div class="new-image-container">
+            <img src="./images/barneygomez.jpg" alt="barney" title="barney gumble">
+            <p class="new-image-description">Bernard Arnold Gumble</p>
+        </div>
+        <div class="new-image-container">
+            <img src="./images/carlcarlson.jpg" alt="carl" title="carl carlson">
+            <p class="new-image-description">Carl Carlson</p>
+        </div>
+        <div class="new-image-container">
+            <img src="./images/lennyleonard.jpg" alt="lenny" title="lenny leonard">
+            <p class="new-image-description">Lenford Leonard</p>
+        </div>
+        <div class="new-image-container red-card">
+            <img src="./images/cosmefulanito.jpg" alt="cosme" title="cosme fulanito">
+            <p class="new-image-description">Cosme Fulanito</p>
+            <p class="new-image-description-banned">VETADO</p>
+        </div>
+    </div>
+<hr>
+    <footer>
+        <h3 class="centered-text">Contacto</h3>
+        <section class="contact-section">
+            <div class="contact-info">
+                <div class="contact-info-card">
+                    <img src="./images/moe.jpg" alt="moeszyslak" title="Moe, dueño de la taberna">
+                    <p>Maurice Lester Szyslak</p>
+                    <p>Dueño de la taberna</p>
+                </div>
+            </div>
+            <div class="social-media">
+                <div class="social-media-item">
+                    <img src="./images/fb.png" alt="Facebook" title="Facebook">
+                    <p>Facebook</p>
+                </div>
+                <div class="social-media-item">
+                    <img src="./images/x-logo.jpg" alt="Twitter" title="Twitter">
+                    <p>Twitter (Ahora X)</p>
+                </div>
+                <div class="social-media-item">
+                    <img src="./images/ig.png" alt="Instagram" title="Instagram">
+                    <p>Instagram</p>
+                </div>
+            </div>
+        </section>
+        <h4>© Copyright Moe Szyslak, 1989</h4>
+    </footer>
 </body>
 <script src="./listadecompras.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </html>
