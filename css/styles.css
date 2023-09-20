@@ -1,73 +1,73 @@
 header {
-    background-color: purple; /* Cambia el color a tu preferencia */
-    padding: 20px; /* Espaciado alrededor del contenido del header */
+    background-color: purple; 
+    padding: 20px; 
     display: flex;
-    align-items: center; /* Centrar verticalmente el contenido */
+    align-items: center; 
 }
 
-/* Estilo para la imagen del logo */
+
 header img {
-    max-width: 300px; /* Ajusta el tamaño de la imagen según tus necesidades */
-    margin-right: 20px; /* Espacio a la derecha de la imagen */
+    max-width: 300px; 
+    margin-right: 20px; 
     border-radius: 10px;
 }
 
 .text-container {
-    flex-grow: 1; /* Permite que el texto ocupe todo el espacio disponible */
-    color: white; /* Cambia el color del texto a tu preferencia */
+    flex-grow: 1; 
+    color: white; 
 }
 
 .text-container h1 {
-    font-size: 30px; /* Tamaño del título */
-    margin: 0; /* Elimina el margen predeterminado */
+    font-size: 30px; 
+    margin: 0; 
 }
 
-/* Estilo para el subtítulo (h2) */
+
 .text-container h2 {
-    font-size: 26px; /* Tamaño del subtítulo */
-    margin: 0; /* Elimina el margen predeterminado */
+    font-size: 26px; 
+    margin: 0; 
 }
 
-/* Estilo base para los elementos h1 y h2 */
+
 .text-container h1,
 .text-container h2 {
-    opacity: 0; /* Inicialmente, los oculta */
+    opacity: 0; 
 }
 
-/* Definir la animación */
+
 @keyframes fall-from-above-animation {
     0% {
-        transform: translateY(-50px); /* Empieza arriba de la pantalla */
-        opacity: 0; /* Inicialmente, sin visibilidad */
+        transform: translateY(-50px); 
+        opacity: 0; 
     }
     100% {
-        transform: translateY(0); /* Llega a su posición original */
-        opacity: 1; /* Completamente visible */
+        transform: translateY(0); 
+        opacity: 1;
     }
 }
 
-/* Aplicar la animación a los elementos con la clase "fall-from-above" */
+
 .fall-from-above {
-    animation: fall-from-above-animation 0.5s ease-out forwards; /* Duración y easing de la animación */
-    animation-delay: 0.2s; /* Retraso para iniciar la animación */
+    animation: fall-from-above-animation 0.5s ease-out forwards;
+    animation-delay: 0.2s; 
 }
 
 
 
 .navbar {
-    background-color: purple; /* Color de fondo del navbar */
-    padding: 10px 0; /* Espaciado interno */
+    background-color: purple; 
+    padding: 10px 0; 
 }
 .container {
     display: flex;
-    justify-content: space-between; /* Espaciado equitativo entre el logo y los enlaces */
+    justify-content: space-between; 
     transform: translate(-500px,0);
     font-size: 20px;
 }
 
-/* Estilo para los enlaces del navbar */
+
 .navbar-nav {
-    list-style: none; /* Quita la lista de viñetas */
+    list-style: none; 
     margin: 0;
     padding: 0;
     display: flex;
@@ -75,12 +75,12 @@ header img {
 }
 
 .nav-link {
-    color: black; /* Color del texto de los enlaces */
-    text-decoration: none; /* Quita el subrayado */
+    color: black; 
+    text-decoration: none; 
 }
 
 .nav-link:hover {
-    color: orange; /* Color del texto al pasar el mouse */
+    color: orange; 
 }
 
 .centered-text{
@@ -90,21 +90,21 @@ header img {
 
 .image-carousel {
     display: flex;
-    overflow-x: auto; /* Permite desplazar horizontalmente las imágenes */
-    gap: 20px; /* Espacio entre las tarjetas de imágenes */
-    padding: 20px 0; /* Espacio alrededor del carrusel */
+    overflow-x: auto; 
+    gap: 20px; 
+    padding: 20px 0;
     justify-content: center;
 }
 
 .image-container {
-    background-color: green; /* Color violeta claro */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px; /* Espacio interno de la tarjeta */
-    flex: 0 0 auto; /* Evita que las tarjetas se estiren para llenar el espacio disponible */
+    background-color: green; 
+    border-radius: 10px;
+    padding: 20px; 
+    flex: 0 0 auto; 
 }
 
 .image-container img {
-    max-width: 100%; /* Ajusta el tamaño de la imagen al ancho de la tarjeta */
+    max-width: 100%; 
     height: 250px;
     border-radius: 20px;
 }
@@ -113,7 +113,7 @@ header img {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
     font-size: 20px;
-    margin-top: 10px; /* Espacio entre la imagen y el texto/botón */
+    margin-top: 10px; 
 }
 
 .add-to-cart-btn{
@@ -130,29 +130,29 @@ header img {
 
 
 
-/* Estilo para aumentar el tamaño y cambiar el color del borde al pasar el mouse */
+
 .image-container:hover {
-    transform: scale(1.05); /* Aumenta el tamaño al 105% */
-    border: 5px solid purple; /* Cambia el borde a color violeta claro */
+    transform: scale(1.05);
+    border: 5px solid purple; 
 }
 
 .new-image-grid{
     display: flex;
-    overflow-x: auto; /* Permite desplazar horizontalmente las imágenes */
-    gap: 20px; /* Espacio entre las tarjetas de imágenes */
-    padding: 20px 0; /* Espacio alrededor del carrusel */
+    overflow-x: auto; 
+    gap: 20px; 
+    padding: 20px 0; 
     justify-content: center;
 }
 
 .new-image-container{
-    background-color: green; /* Color violeta claro */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px; /* Espacio interno de la tarjeta */
-    flex: 0 0 auto; /* Evita que las tarjetas se estiren para llenar el espacio disponible */
+    background-color: green; 
+    border-radius: 10px; 
+    padding: 20px;
+    flex: 0 0 auto;
 }
 
 .new-image-container img{
-    max-width: 100%; /* Ajusta el tamaño de la imagen al ancho de la tarjeta */
+    max-width: 100%; 
     height: 250px;
     border-radius: 20px;
 }
@@ -161,7 +161,7 @@ header img {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
     font-size: 20px;
-    margin-top: 10px; /* Espacio entre la imagen y el texto/botón */
+    margin-top: 10px; 
 }
 
 .new-image-description-banned{
@@ -173,41 +173,40 @@ header img {
 
 
 .new-image-container:hover {
-    transform: scale(1.05); /* Aumenta el tamaño al 105% */
-    border: 5px solid purple; /* Cambia el borde a color violeta claro */
+    transform: scale(1.05); 
+    border: 5px solid purple; 
 }
 
 /* Estilo para la última tarjeta con fondo rojo */
 .new-image-container.red-card {
-    background-color: red; /* Cambia el fondo a color rojo */
-    color: black; /* Cambia el color del texto para que sea legible */
-    /* Otros estilos adicionales si es necesario */
+    background-color: red; 
+    color: black; 
 }
 .new-image-container.red-card:hover{
-    transform: scale(1.05); /* Aumenta el tamaño al 105% */
-    border: 5px solid darkred; /* Cambia el borde a color violeta claro */
+    transform: scale(1.05); 
+    border: 5px solid darkred; 
 }
 
 body{
      background-image:url(../images/tabernafondo.jpg);    
 }
 
-/* Estilo para la sección de contacto */
+
 .contact-section {
-    text-align: center; /* Centra el contenido horizontalmente */
+    text-align: center; 
     padding: 20px;
 }
 
-/* Estilo para la lista de redes sociales */
+
 .social-media {
     display: flex;
-    flex-direction: column; /* Muestra los elementos uno debajo del otro */
-    align-items: center; /* Centra horizontalmente los elementos */
+    flex-direction: column; 
+    align-items: center; 
 }
 
-/* Estilo para cada elemento de redes sociales */
+
 .social-media-item {
-    margin-bottom: 20px; /* Espacio entre los elementos */
+    margin-bottom: 20px; 
     transform: translate(0,-290px);
 }
 
@@ -215,49 +214,49 @@ body{
     color: white;
 }
 
-/* Estilo para las imágenes de redes sociales */
+
 .social-media-item img {
-    max-width: 50px; /* Ajusta el tamaño de las imágenes según tus necesidades */
+    max-width: 50px; 
 }
 
-/* Estilo para los nombres de las redes sociales */
+
 .social-media-item p {
     margin: 5px 0;
-    font-weight: bold; /* Hace que los nombres sean más legibles */
+    font-weight: bold; 
 }
 
-/* Estilo para el contenedor de la información de contacto y las redes sociales */
+
 .contact-info {
     display: flex;
-    align-items: left; /* Centra verticalmente los elementos */
-    justify-content: left; /* Centra horizontalmente los elementos */
+    align-items: left; 
+    justify-content: left; 
 }
 
 /* Estilo para la tarjeta dorada */
 .contact-info-card {
-    background-color: darkgoldenrod; /* Color dorado de fondo */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 20px; /* Espacio interno de la tarjeta */
-    text-align: center; /* Centra el contenido horizontalmente */
-    margin-right: 20px; /* Espacio a la derecha de la tarjeta */
+    background-color: darkgoldenrod; 
+    border-radius: 10px; 
+    padding: 20px; 
+    text-align: center; 
+    margin-right: 20px; 
 }
 
 .contact-info-card:hover{
-    transform: scale(1.05); /* Aumenta el tamaño al 105% */
-    border: 5px solid gold; /* Cambia el borde a color violeta claro */
+    transform: scale(1.05); 
+    border: 5px solid gold; 
 }
 
-/* Estilo para la imagen de contacto */
+
 .contact-info-card img {
-    max-width: 300px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    max-width: 300px; 
     height: 300px;
-    border-radius: 10px; /* Bordes redondeados para la imagen */
+    border-radius: 10px; 
 }
 
-/* Estilo para el texto de información de contacto */
+
 .contact-info-card p {
     margin: 10px 0;
-    font-weight: bold; /* Hace que el texto sea más legible */
+    font-weight: bold; 
 }
 
 h4{
@@ -271,7 +270,7 @@ hr{
     border-color: solid purple;
 }
 
-/* Estilo para el contenedor del carrito */
+
 .cart {
     background-color: orange;
     border: 3px solid orangered;
@@ -283,14 +282,14 @@ hr{
     margin-right: auto;
 }
 
-/* Estilo para el título del carrito */
+
 .cart h3 {
     color: #333;
     font-size: 20px;
     margin-top: 0;
 }
 
-/* Estilo para los elementos del carrito */
+
 .cart ul {
     list-style-type: none;
     padding: 0;
@@ -305,7 +304,7 @@ hr{
     padding-bottom: 5px;
 }
 
-/* Estilo para el botón "Eliminar" */
+
 .cart button {
     background-color: darkred;
     color: #fff;
@@ -320,7 +319,7 @@ hr{
     background-color: red;
 }
 
-/* Estilo para el total del carrito */
+
 .cart p {
     margin-top: 10px;
     text-align: right;
@@ -330,7 +329,7 @@ hr{
 }
 
 
-/* Estilo para el fondo oscuro detrás de la ventana emergente */
+
 .overlay {
     position: fixed;
     top: 0;

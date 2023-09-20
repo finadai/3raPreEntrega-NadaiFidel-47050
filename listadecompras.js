@@ -33,7 +33,6 @@ function verificarEdad() {
       }, 3000);
   }
 }
-
 // Llama a la función para verificar la edad cuando se carga la página
 verificarEdad();
 
@@ -73,8 +72,6 @@ addToCartButtons.forEach((button, index) => {
         updateCart();
     });
 });
-
-
 
 // Función para eliminar un producto del carrito
 function removeFromCart(index) {
