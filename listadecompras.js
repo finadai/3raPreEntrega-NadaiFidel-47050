@@ -45,15 +45,13 @@ const productos = [
   ];
 
 // Variables para mantener el estado del carrito
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
+const cart = [];
 let total = 0;
 
 // Función para agregar un producto al carrito
 function addToCart(productName, price) {
-  cart.push({ name: productName, price: price });
-  total += price;
-  updateCart();
-  saveCartToLocalStorage();
+    cart.push({ name: productName, price: price });
+    total += price;
 }
 
 // Función para actualizar el contenido del carrito
@@ -85,30 +83,10 @@ addToCartButtons.forEach((button, index) => {
 
 // Función para eliminar un producto del carrito
 function removeFromCart(index) {
-    const removedItem = cart.splice(index, 1)[0];
-    total -= removedItem.price;
-    updateCart();
-    saveCartToLocalStorage();
-  }
+  const removedItem = cart.splice(index, 1)[0];
+  total -= removedItem.price;
+}
 
-// Función para guardar el carrito en el localStorage
-function saveCartToLocalStorage() {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
-  
-  // Función para cargar el carrito desde el localStorage al cargar la página
-  function loadCartFromLocalStorage() {
-    if (localStorage.getItem("cart")) {
-      cart.length = 0; // Limpiamos el carrito actual
-      const cartData = JSON.parse(localStorage.getItem("cart"));
-      cart.push(...cartData);
-      updateCart();
-    }
-  }
-  
-  // Cargar el carrito al cargar la página
-  loadCartFromLocalStorage();
-  
 // Función para actualizar el contenido del carrito
 function updateCart() {
   const cartItemsElement = document.getElementById("cart-items");
