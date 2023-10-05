@@ -61,7 +61,7 @@ header img {
 .container {
     display: flex;
     justify-content: space-between; 
-    transform: translate(-500px,0);
+    transform: translate(-400px,0);
     font-size: 20px;
 }
 
@@ -353,3 +353,6 @@ hr{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.search-button{
+    border-radius: 2px;
+}

@@ -34,6 +34,12 @@
                     </ul>
                 </div>
             </nav>
+
+            <input type="text" id="searchInput" placeholder="Buscar productos">
+            <button id="searchButton">Buscar</button>
+            <div id="searchResults"></div>
+            
+            
         </header>
         
 
@@ -43,6 +49,8 @@
                 <!-- Aquí se agregarán los elementos del carrito -->
             </ul>
             <p>Total: <span id="cart-total">$0.00</span></p>
+            <!-- <button id="toggle-cart-btn">Mostrar/ocultar carrito</button> -->
+            <button id="buy-button">Comprar</button>
         </div>
         
     </header>
@@ -51,27 +59,27 @@
         <div class="image-container">
             <img src="./images/cervezaduff.jpg" alt="cervezaduff" title="cerveza duff">
             <p class="image-description">Cerveza duff $5.00</p>
-            <button class="add-to-cart-btn" id="add-to-cart-btn-1">Añadir al carrito</button>
+            <button class="add-to-cart-btn" data-product-id="1">Añadir al carrito</button>
         </div>
         <div class="image-container">
             <img src="./images/llamaradamoe.jpg" alt="llamaradamoe" title="llamarada moe">
             <p class="image-description">Llamarada Moe $30.00</p>
-            <button class="add-to-cart-btn" id="add-to-cart-btn-2">Añadir al carrito</button>
+            <button class="add-to-cart-btn" data-product-id="1">Añadir al carrito</button>
         </div>
         <div class="image-container">
             <img src="./images/olvidame.jpg" alt="olvidame" title="olvidame">
             <p class="image-description">Cóctel Olvidame $25.00</p>
-            <button class="add-to-cart-btn" id="add-to-cart-btn-3">Añadir al carrito</button>
+            <button class="add-to-cart-btn" data-product-id="1">Añadir al carrito</button>
         </div>
         <div class="image-container">
             <img src="./images/ambrosiacupido.jpg" alt="ambrosiacupido" title="ambrosia cupido">
             <p class="image-description">Cóctel Ambrosia de Cupido $40.00</p>
-            <button class="add-to-cart-btn" id="add-to-cart-btn-4">Añadir al carrito</button>
+            <button class="add-to-cart-btn" data-product-id="1">Añadir al carrito</button>
         </div>
         <div class="image-container">
             <img src="./images/skittlebrau.jpg" alt="skittlebrau" title="skittlebrau">
             <p class="image-description">Skittlebrau $7.50</p>
-            <button class="add-to-cart-btn" id="add-to-cart-btn-5">Añadir al carrito</button>
+            <button class="add-to-cart-btn" data-product-id="1">Añadir al carrito</button>
         </div>
     </div>
 <br>
