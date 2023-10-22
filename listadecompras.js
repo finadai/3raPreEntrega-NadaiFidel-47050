@@ -14,24 +14,18 @@ function verificarEdad() {
       var popup = document.createElement("div");
       popup.className = "popup";
 
-      var welcomeHeading = document.createElement("h1");
-      welcomeHeading.textContent = "Bienvenido";
-      var welcomeMessage = document.createElement("p");
-      welcomeMessage.textContent = "Sirvete lo que quieras, pero paga primero.";
-
-      
-      popup.appendChild(welcomeHeading);
-      popup.appendChild(welcomeMessage);
-      overlay.appendChild(popup);
-
-      
-      document.body.appendChild(overlay);
-
-      
-      setTimeout(function () {
-          overlay.style.display = "none";
-      }, 3000);
-  }
+      Swal.fire({
+        title: '¡Bienvenido!',
+        text: 'Sírvete lo que quieras, pero paga primero.',
+        icon: 'error',
+        confirmButtonText: 'Okey, amigo',
+        iconColor: 'orange',
+        confirmButtonColor: 'orange',
+        iconHtml:'<i class="bi bi-cup-straw"></i>',
+        showConfirmButton: false,
+        timer: '2000'
+      })
+    }
 }
 // Llama a la función para verificar la edad cuando se carga la página
 verificarEdad();
@@ -45,29 +39,14 @@ const productos = [
   ];
 
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let total = 0;
-  
+  let total = parseFloat(localStorage.getItem("total")) || 0;
+
   // Función para agregar un producto al carrito
   function addToCart(productName, price) {
-      cart.push({ name: productName, price: price });
-      total += price;
-      saveCartToLocalStorage();
-  }
-  
-  // Función para actualizar el contenido del carrito
-  function updateCart() {
-      const cartItemsElement = document.getElementById("cart-items");
-      cartItemsElement.innerHTML = "";
-  
-      cart.forEach((item, index) => {
-          const listItem = document.createElement("li");
-          listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-          cartItemsElement.appendChild(listItem);
-      });
-  
-      const cartTotalElement = document.getElementById("cart-total");
-      cartTotalElement.textContent = `$${total.toFixed(2)}`;
-  }
+    cart.push({ name: productName, price: price });
+    total += price;
+    saveCartToLocalStorage();
+}
   
   // Event listeners para los botones "Añadir al carrito"
   const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
@@ -85,6 +64,20 @@ const productos = [
   function removeFromCart(index) {
     const removedItem = cart.splice(index, 1)[0];
     total -= removedItem.price;
+    Toastify({
+      text: "Producto removido del carrito.",
+      duration: 2000,
+      destination: "",
+      newWindow: true,
+      close: false,
+      gravity: "top", // `top` or `bottom`
+      position: "center", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #6807E3, #EB9705)",
+      },
+      onClick: function(){} // Callback after click
+    }).showToast();
   }
   
   // Función para actualizar el contenido del carrito
@@ -93,39 +86,47 @@ const productos = [
     cartItemsElement.innerHTML = "";
   
     cart.forEach((item, index) => {
-        const listItem = document.createElement("li");
-        listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
-        
-        const removeButton = document.createElement("button");
-        removeButton.textContent = "Eliminar";
-        removeButton.addEventListener("click", () => {
-            removeFromCart(index);
-            updateCart();
-        });
+      const listItem = document.createElement("li");
+      listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
   
-        listItem.appendChild(removeButton);
-        cartItemsElement.appendChild(listItem);
-    });
+      const removeButton = document.createElement("button");
+      removeButton.textContent = "Eliminar";
+      removeButton.addEventListener("click", () => {
+        removeFromCart(index);
+        updateCart();
+      });
+  
+      listItem.appendChild(removeButton);
+      cartItemsElement.appendChild(listItem);
+    })
   
     const cartTotalElement = document.getElementById("cart-total");
     cartTotalElement.textContent = `$${total.toFixed(2)}`;
-  
   }
+  
   
   // Función para guardar el carrito en el localStorage
   function saveCartToLocalStorage() {
-      localStorage.setItem("cart", JSON.stringify(cart));
-    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("total", total.toString());
+  }
     
     // Función para cargar el carrito desde el localStorage al cargar la página
-    function loadCartFromLocalStorage() {
-      if (localStorage.getItem("cart")) {
-        cart.length = 0; // Limpiamos el carrito actual
-        const cartData = JSON.parse(localStorage.getItem("cart"));
-        cart.push(...cartData);
-        updateCart();
-      }
-    }
+  function loadCartFromLocalStorage() {
+  const cartData = JSON.parse(localStorage.getItem("cart"));
+  const totalData = localStorage.getItem("total");
+
+  if (cartData && Array.isArray(cartData)) {
+    cart.length = 0; // Limpiamos el carrito actual
+    cart.push(...cartData);
+  }
+
+  if (totalData) {
+    total = parseFloat(totalData);
+  }
+
+  updateCart();
+}  
     
     // Cargar el carrito al cargar la página
     loadCartFromLocalStorage();
@@ -137,14 +138,40 @@ const buyButton = document.getElementById("buy-button");
 buyButton.addEventListener("click", () => {
     // Para corroborar si el carrito tiene por lo menos un elemento
     if (cart.length > 0) {
-        alert("Compra realizada con éxito. Gracias por su compra.");
+      Toastify({
+        text: "Compra realizada, muchas gracias.",
+        duration: 2000,
+        destination: "",
+        newWindow: true,
+        close: false,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #6807E3, #EB9705)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
         // Vacía el carrito después de la compra
         cart.length = 0;
         total = 0;
         updateCart();
     } 
     else {
-        alert("El carrito está vacío, agrega productos antes de comprar.");
+      Toastify({
+        text: "El carrito está vacío, amigo",
+        duration: 2000,
+        destination: "",
+        newWindow: true,
+        close: false,
+        gravity: "top", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #6807E3, #EB9705)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();;
     }
 });
 
@@ -194,7 +221,19 @@ function displayResults(results) {
     searchResults.appendChild(productContainer);
   });
 }
+
+fetch('productos.json')
+  .then(response => response.json())
+  .then(data => {
+    const productos = data; 
+  })
+  .catch(error => console.error('Error al cargar productos:', error));
   
 
+const tabContainer = document.querySelector(".tab-container");
+  tabContainer.addEventListener("click", function() {
+    this.classList.toggle("open");
+  });
+  
 
 
